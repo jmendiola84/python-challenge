@@ -2,6 +2,7 @@
 import os
 import csv
 
+file=open("FinancialAnalysis.txt","w")
 
 for filename in os.listdir("Data"):
     if filename.endswith(".py"): 
@@ -50,4 +51,15 @@ for filename in os.listdir("Data"):
     print("Average Revenue Change: $" + str(avgRevChg))
     print("Greatest Increase in Revenue: " + str(greatestIncRevenueMonth) + " ($" + str(greatestIncRevenue)+")")
     print("Greatest Decrease in Revenue: " + str(greatestDecRevenueMonth) + " ($" + str(greatestDecRevenue)+")")
+    print("                                  ")
 
+    file.write("Financial Analysis - " + filename + "\n")
+    file.write("-------------------------\n")
+    file.write("Total Months: " + str(totalMonths)+ "\n")
+    file.write("Total Revenue: $" + str(totalRevenue) + "\n")
+    file.write("Average Revenue Change: $" + str(avgRevChg) + "\n")
+    file.write("Greatest Increase in Revenue: " + str(greatestIncRevenueMonth) + " ($" + str(greatestIncRevenue)+")\n")
+    file.write("Greatest Decrease in Revenue: " + str(greatestDecRevenueMonth) + " ($" + str(greatestDecRevenue)+")\n")
+    file.write("                                  \n")
+
+file.close()
